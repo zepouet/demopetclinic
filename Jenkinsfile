@@ -22,7 +22,7 @@ node {
 
 stage "Build project"
 node {
-    sh 'mvn clean package'
+    sh 'mvn3 clean package'
     archiveArtifacts artifacts: 'target/spring-petclinic-1.5.1.jar'
 }
 
