@@ -29,7 +29,7 @@ node {
 stage "Create Application"
 node {
     cloudunit(host, username, password, """
-        create-app --name pc-${appname} --type tomcat-8
+        create-app --name pc-${appname} --type fatjar
         add-jvm-options " -Dspring.profiles.active=mysql "
     """)
 }
