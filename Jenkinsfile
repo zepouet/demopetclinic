@@ -20,9 +20,34 @@ node {
     """)
 }
 
-stage "Create Backend"
+stage "Build project"
+node {
+    sh 'mvn clean package'
+    archiveArtifacts artifacts: 'target/spring-petclinic-1.5.1.jar'
+}
+
+stage "Create Application"
 node {
     cloudunit(host, username, password, """
         create-app --name pc-${appname} --type tomcat-8
+        add-jvm-options " -Dspring.profiles.active=mysql "
     """)
 }
+
+stage "Create Mysql"
+node {
+    cloudunit(host, username, password, """
+        use pc-${appname}
+        add-module --name mysql-5-5
+    """)
+}
+
+stage "Deploy"
+node {
+    cloudunit(host, username, password, """
+        use pc-${appname}
+        deploy --path target/spring-petclinic-1.5.1.jar
+    """)
+}
+
+
