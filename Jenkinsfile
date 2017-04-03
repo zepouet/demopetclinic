@@ -19,3 +19,10 @@ node {
         rm-app --name pc-${appname} --scriptUsage
     """)
 }
+
+stage "Create Backend"
+node {
+    cloudunit(host, username, password, """
+        create-app --name pc-${appname} --type tomcat-8
+    """)
+}
