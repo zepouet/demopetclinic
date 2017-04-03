@@ -46,7 +46,7 @@ stage "Deploy"
 node {
     cloudunit(host, username, password, """
         use pc-${appname}
-        deploy --path target/spring-petclinic-1.5.1.jar
+        deploy --path target/spring-petclinic-1.5.1.jar --openBrowser false
     """)
 }
 
