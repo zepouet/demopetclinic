@@ -1,4 +1,4 @@
-def host = "http://cu-tomcat:8080" 
+def host = "http://192.168.50.1:8080" 
 def username = "johndoe"
 def password = "abc2015"
 def appname
