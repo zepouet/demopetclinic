@@ -23,7 +23,7 @@ node {
 stage "Build project"
 node {
     sh 'mvn clean deploy -Pcloudunit -DskipTests'
-    archiveArtifacts artifacts: 'target/spring-petclinic-1.5.1.jar'
+    archiveArtifacts artifacts: '**/target/*.[jew]ar'
 }
 
 stage "Create Application"
@@ -46,7 +46,7 @@ stage "Deploy"
 node {
     cloudunit(host, username, password, """
         use pc-${appname}
-        deploy --path target/spring-petclinic-1.5.1.jar --openBrowser false
+        deploy --path target/spring-petclinic-*.jar --openBrowser false
     """)
 }
 
