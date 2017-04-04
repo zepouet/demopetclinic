@@ -24,7 +24,7 @@ stage "Build project"
 node {
     sh 'mvn clean deploy -Pcloudunit'
     archiveArtifacts artifacts: '**/target/*.[jew]ar'
-    junit '**/target/surefire-reports/*.xml,**/target/failsafe-reports/*.xml'
+    junit '**/target/surefire-reports/*.xml'
 }
 
 stage "Create Application"
