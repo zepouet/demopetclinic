@@ -22,7 +22,7 @@ node {
 
 stage "Build project"
 node {
-    sh 'mvn clean deploy -Pcloudunit'
+    sh 'mvn clean deploy -Pcloudunit -DskipTests'
     // archiveArtifacts artifacts: '**/target/*.[jew]ar'
     // junit '**/target/surefire-reports/*.xml'
 }
