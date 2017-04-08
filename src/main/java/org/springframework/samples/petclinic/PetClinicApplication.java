@@ -17,11 +17,16 @@
 package org.springframework.samples.petclinic;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.actuate.autoconfigure.ExportMetricWriter;
+import org.springframework.boot.actuate.metrics.jmx.JmxMetricWriter;
+import org.springframework.boot.actuate.metrics.writer.MetricWriter;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.jmx.export.MBeanExporter;
 
 /**
  * PetClinic Spring Boot Application.
- * 
+ *
  * @author Dave Syer
  *
  */
@@ -30,6 +35,12 @@ public class PetClinicApplication {
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(PetClinicApplication.class, args);
+    }
+
+    @Bean
+    @ExportMetricWriter
+    MetricWriter metricWriter(MBeanExporter exporter) {
+        return new JmxMetricWriter(exporter);
     }
 
 }
