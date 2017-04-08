@@ -93,6 +93,15 @@ Here is a list of them:
 | Bean Validation / Hibernate Validator: simplify Maven dependencies and backward compatibility |[HV-790](https://hibernate.atlassian.net/browse/HV-790) and [HV-792](https://hibernate.atlassian.net/browse/HV-792) |
 | Spring Data: provide more flexibility when working with JPQL queries | [DATAJPA-292](https://jira.springsource.org/browse/DATAJPA-292) |
 
+# Add JMX TRANSGENT
+
+Clone and build `https://github.com/Treeptik/jmxtrans-agent`
+
+Add this option to jvm
+```
+-javaagent:/Users/nicolas/software/jmxtrans-agent/target/jmxtrans-agent-1.2.5-SNAPSHOT-jar-with-dependencies.jar=/Users/nicolas/software/spring-petclinic/jmxtrans-agent.xml
+```
+
 
 # Contributing
 
