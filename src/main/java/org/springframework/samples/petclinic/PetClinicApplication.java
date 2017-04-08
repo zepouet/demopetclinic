@@ -18,6 +18,8 @@ package org.springframework.samples.petclinic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.actuate.autoconfigure.ExportMetricWriter;
+import org.springframework.boot.actuate.endpoint.MetricsEndpoint;
+import org.springframework.boot.actuate.endpoint.MetricsEndpointMetricReader;
 import org.springframework.boot.actuate.metrics.jmx.JmxMetricWriter;
 import org.springframework.boot.actuate.metrics.writer.MetricWriter;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -43,4 +45,12 @@ public class PetClinicApplication {
         return new JmxMetricWriter(exporter);
     }
 
+    /*
+       * Reading all metrics that appear on the /metrics endpoint to expose them to metrics writer beans.
+       */
+    @Bean
+    public MetricsEndpointMetricReader metricsEndpointMetricReader(final MetricsEndpoint metricsEndpoint) {
+        return new MetricsEndpointMetricReader(metricsEndpoint);
+    }
 }
+

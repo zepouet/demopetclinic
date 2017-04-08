@@ -18,8 +18,8 @@
         <query objectName="java.lang:type=Memory" attribute="NonHeapMemoryUsage" key="committed"
                resultAlias="jvm.nonHeapMemoryUsage.committed"/>
 
-        <query objectName="java.lang:type=Memory" attribute="NonHeapMemoryUsage" key="committed"
-               resultAlias="gauge.response.webjars.star-star"/>
+        <query objectName="org.springframework.metrics:type=processors" attribute="Value" key="Value"
+               resultAlias="processors"/>
 
         <query objectName="java.lang:type=ClassLoading" attribute="LoadedClassCount" resultAlias="jvm.loadedClasses"/>
 
