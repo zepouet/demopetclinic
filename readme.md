@@ -96,10 +96,11 @@ Here is a list of them:
 # Add JMX TRANSGENT
 
 Clone and build `https://github.com/Treeptik/jmxtrans-agent`
+Then `mvn clean package -DskipTests`
 
 Add this option to jvm
 ```
--javaagent:/Users/nicolas/software/jmxtrans-agent/target/jmxtrans-agent-1.2.5-SNAPSHOT-jar-with-dependencies.jar=/Users/nicolas/software/spring-petclinic/jmxtrans-agent.xml
+-javaagent:/Users/<USER>/software/jmxtrans-agent/target/jmxtrans-agent-1.2.5-SNAPSHOT-jar-with-dependencies.jar=/Users/<USER>/software/spring-petclinic/jmxtrans-agent.xml
 ```
 
 
