@@ -23,7 +23,7 @@
 
         <!-- Web dependencies -->
         <webjars-bootstrap.version>3.3.6</webjars-bootstrap.version>
-        <webjars-jquery-ui.version>1.11.4</webjars-jquery-ui.version>
+        <webjars-jquery-ui.version>1.13.0</webjars-jquery-ui.version>
         <webjars-jquery.version>2.2.4</webjars-jquery.version>
         <wro4j.version>1.8.0</wro4j.version>
 
@@ -34,18 +34,18 @@
     </properties>
 
     <profiles>
-        <profile >
-            <id>cloudunit</id >
-            <activation >
-                <activeByDefault>true</activeByDefault >
-            </activation >
-            <properties >
-                <sonar.host.url >
+        <profile>
+            <id>cloudunit
+            <activation>
+                <activeByDefault>true
+            
+            <properties/>
+                <sonar.host.url>
                     http://cu-sonar:9000
-                </sonar.host.url >
-            </properties >
-        </profile >
-    </profiles>
+                
+            
+        
+    
 
     <dependencies>
         <!-- Spring and Spring Boot dependencies -->
@@ -278,4 +278,4 @@
         </repository>
     </distributionManagement>
 
-</project>
+</sonar.host.url></activeByDefault></activation></id></profile></profiles></project>
